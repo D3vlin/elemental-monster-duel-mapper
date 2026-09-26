@@ -33,7 +33,7 @@ jobs:
           server-password: MAVEN_TOKEN
 
       - name: Deploy package
-        run: mvn -B -ntp -DskipTests deploy
+        run: mvn -B -ntp -U -DskipTests deploy
         env:
           MAVEN_USERNAME: ${{ github.actor }}
           MAVEN_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
